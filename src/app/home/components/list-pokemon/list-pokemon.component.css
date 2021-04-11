@@ -1,0 +1,40 @@
+.img-size {
+  width: 50px;
+}
+
+table {
+  color: white;
+}
+
+thead > tr > th {
+  width: 50px!important;
+}
+
+.margin {
+  margin-top: 100px;
+}
+
+.size-logo {
+  width: 40%;
+}
+
+.favorite {
+  color: #f0f0f0;
+  transition: 0.3s;
+  opacity: 0.8;
+}
+
+.favorite:hover {
+  color: orange;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.active-fav {
+  color: orange;
+}
+
+.name {
+  display: flex;
+  justify-content: space-around;
+}

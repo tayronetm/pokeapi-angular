@@ -1,0 +1,38 @@
+<div class="margin container-sm">
+  <section class="d-flex justify-content-center">
+    <img class="size-logo" src="../../../../assets/logo.png" alt="">
+  </section>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pokemon of pokemons">
+      <th scope="row"> <img class="img-size" src="https://fc01.deviantart.net/fs70/f/2012/249/8/6/8649a760edc4f77a5984b648431428fa-d5ds6e9.gif" alt="" srcset=""></th>
+      <td>
+        {{ pokemon.name | titlecase }}
+        <i [ngClass]="{'active-fav': pokemon.favorite === true}" 
+        (click)="selectAsFavorite(pokemon)"
+        class="favorite far fa-star "></i>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="10" [(page)]="page" [pageSize]="pageSize" (pageChange)="getPokemons()">
+    </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="getPokemons()">
+      <option [ngValue]="2">2 items por página</option>
+      <option [ngValue]="4">4 items por página</option>
+      <option [ngValue]="6">6 items por página</option>
+    </select>
+  </div>
+</div>
+
+
+
